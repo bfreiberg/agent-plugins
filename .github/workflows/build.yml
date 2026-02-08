@@ -1,11 +1,8 @@
-name: Quality Gates
+name: Build
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
+  pull_request: {}
+  workflow_dispatch: {}
 permissions:
   actions: none
   attestations: none
@@ -23,7 +20,7 @@ permissions:
   security-events: none
   statuses: none
 jobs:
-  quality:
+  build:
     permissions:
       actions: read
       contents: read
@@ -31,20 +28,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0  # full history
 
       - name: Setup mise
         uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
         with:
           cache: true
 
-      - name: Check formatting
-        run: mise run fmt:check
-
-      - name: Lint Markdown (includes SKILL.md validation)
-        run: mise run lint:md
-
-      - name: Validate Cross Reference manifests
-        run: mise run lint:cross-refs
-
-      - name: Validate JSON manifests
-        run: mise run lint:manifests
+      - name: Build
+        run: mise run build
