@@ -1,13 +1,7 @@
 ---
 name: aws-lambda-durable-functions
 description: >
-  Build resilient, long-running AWS Lambda durable functions with automatic state persistence,
-  retry logic, and workflow orchestration for up to 1 year execution. Covers the critical replay
-  model, step operations, wait/callback patterns, concurrent execution (map/parallel), error
-  handling with saga pattern, testing with LocalDurableTestRunner, and deployment with
-  CloudFormation, CDK, and SAM. Use for: lambda durable functions, workflow orchestration,
-  state machines, retry/checkpoint patterns, long-running stateful Lambda functions, saga pattern,
-  agentic AI workflows, human-in-the-loop callbacks, and serverless applications.
+  Build resilient, long-running, multi-step applications with AWS Lambda durable functions with automatic state persistence, retry logic, and orchestration for up to 1 year execution. Covers the critical replay model, step operations, wait/callback patterns, error handling with saga pattern, testing with LocalDurableTestRunner. Triggers on phrases like: lambda durable functions, workflow orchestration, state machines, retry/checkpoint patterns, long-running stateful Lambda functions, saga pattern, human-in-the-loop callbacks, and reliable serverless applications.
 hooks:
   PostToolUse:
     - matcher: "Edit"
@@ -66,6 +60,7 @@ Load the appropriate reference file based on what the user is working on:
 - **Waiting**, **delays**, **callbacks**, **external systems**, or **polling** -> see [wait-operations.md](references/wait-operations.md)
 - **Parallel execution**, **map operations**, **batch processing**, or **concurrency** -> see [concurrent-operations.md](references/concurrent-operations.md)
 - **Error handling**, **retry strategies**, **saga pattern**, or **compensating transactions** -> see [error-handling.md](references/error-handling.md)
+- **Advanced error handling**, **timeout handling**, **circuit breakers**, or **conditional retries** -> see [advanced-error-handling.md](references/advanced-error-handling.md)
 - **Testing**, **local testing**, **cloud testing**, **test runner**, or **flaky tests** -> see [testing-patterns.md](references/testing-patterns.md)
 - **Deployment**, **CloudFormation**, **CDK**, **SAM**, **log groups**, or **infrastructure** -> see [deployment-iac.md](references/deployment-iac.md)
 - **Advanced patterns**, **GenAI agents**, **completion policies**, **step semantics**, or **custom serialization** -> see [advanced-patterns.md](references/advanced-patterns.md)
